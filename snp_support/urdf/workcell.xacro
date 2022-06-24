@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<robot name="motoman_hc10" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find motoman_hc10_support)/urdf/hc10dt_macro.xacro" />
-  <xacro:motoman_hc10dt prefix=""/>
+<robot name="snp_workcell" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find fanuc_lrmate200ic_support)/urdf/lrmate200ic_macro.xacro" />
+  <xacro:fanuc_lrmate200ic prefix=""/>
 
   <xacro:property name="dt_flange_width" value="0.040"/>
 
@@ -13,7 +13,7 @@
   <material name="dark_gray">
     <color rgba="0.3 0.3 0.3 1"/>
   </material>
-  
+
   <link name="world"/>
 
   <!-- Add Floor -->
