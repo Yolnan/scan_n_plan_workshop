@@ -422,7 +422,7 @@ BT::NodeStatus UpdateTrajectoryStartStateNode::onTick(const typename sensor_msgs
     start_point.positions = trajectory.points.front().positions;
     start_point.velocities = std::vector<double>(start_point.positions.size(), 0);
     start_point.accelerations = std::vector<double>(start_point.positions.size(), 0);
-    start_point.effort = std::vector<double>(start_point.positions.size(), 0);
+    // start_point.effort = std::vector<double>(start_point.positions.size(), 0);
     start_point.time_from_start = rclcpp::Duration::from_seconds(0.0);
 
     // Find the index of the trajectory joint in the latest joint state message

@@ -15,7 +15,7 @@ def create_point(point_val: dict,
     point.positions = point_val['positions']
     point.velocities = point_val['velocities']
     point.accelerations = point_val['accelerations']
-    point.effort = point_val['effort']
+    # point.effort = point_val['effort']
 
     sec = int(point_val['time_from_start']['sec']) - int(first_point['time_from_start']['sec'])
     nsec = int(point_val['time_from_start']['nanosec']) - int(first_point['time_from_start']['nanosec'])

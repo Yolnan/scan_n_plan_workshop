@@ -565,6 +565,11 @@ private:
         res->departure.points.insert(res->departure.points.begin(), process_end);
       }
 
+      // Remove effort for each trajectory_msg
+      removeEffort(res->approach);
+      removeEffort(res->process);
+      removeEffort(res->departure);
+
       res->message = "Succesfully planned motion";
       res->success = true;
     }
@@ -575,6 +580,14 @@ private:
     }
 
     RCLCPP_INFO_STREAM(node_->get_logger(), res->message);
+  }
+
+  void removeEffort(trajectory_msgs::msg::JointTrajectory& jt)
+  {
+    for (auto& point : jt.points)
+    {
+      point.effort = std::vector<double>();
+    }
   }
 
   rclcpp::Node::SharedPtr node_;
